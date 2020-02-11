@@ -1,5 +1,6 @@
 $(document).ready(function() {
   window.dancers = [];
+  $('.addDancerButton').unbind('click');
   $('.addDancerButton').on('click', buttonLogic);
 });
 
@@ -17,7 +18,7 @@ var buttonLogic = function (event) {
       by calling the function name from the global scope.*/
 
   var dancer = new dancerMakerFunction(
-    $("body").height() * Math.random(),
+    $('.topbar').height() + ($("body").height() - $('.topbar').height()) * Math.random(),
     $("body").width() * Math.random(),
     Math.random() * 1000
   );
