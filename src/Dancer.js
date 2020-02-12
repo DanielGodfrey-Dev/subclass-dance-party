@@ -57,6 +57,11 @@ Dancer.prototype.move = function () {
     var newTop = this.curr.top;
     var newLeft = this.curr.left;
 
+    var xdif = this.goal.left - this.curr.left;
+    var ydif = this.goal.top - this.curr.left;
+
+    var grad = {top: 0, left: 0};
+
     if (this.goal.top > this.curr.top) {
       //if the goal is close enough, warp there
       newTop = this.goal.top - newTop > speed ? newTop + speed : this.goal.top;
